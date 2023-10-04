@@ -19,8 +19,17 @@ app.get('/', (req, res) => {
 });
 
 //  Routes
-app.use('/api/users', require('./routes/userRoutes'));
-app.use('/api/tickets', require('./routes/ticketRoutes'));
+// app.use('/api/users', require('./routes/userRoutes'));
+// app.use('/api/tickets', require('./routes/ticketRoutes'));
+
+app.use(
+  'https://support-desk-ktlg.vercel.app/api/users',
+  require('./routes/userRoutes')
+);
+app.use(
+  'https://support-desk-ktlg.vercel.app/api/tickets',
+  require('./routes/ticketRoutes')
+);
 
 //  Serve frontend
 // if(process.env.NODE_ENV === 'production') {
